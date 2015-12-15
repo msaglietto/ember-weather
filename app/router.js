@@ -6,6 +6,16 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('weather', {
+    path: '/'
+  }, function() {
+    this.route('search', {
+      path: '/search/:query'
+    });
+    this.route('show', {
+      path: '/weather/:cityId'
+    });
+  });
 });
 
 export default Router;

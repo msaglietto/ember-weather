@@ -1,0 +1,19 @@
+<section>
+    <div class="list-group">
+      {{#each model as |city|}}
+        {{#link-to "weather.show" city.id class="list-group-item"}}
+          <div class="media">
+            <div class="media-left">
+              <a href="#">
+                <img class="media-object" src={{city.icon}}>
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading">{{city.name}}, {{city.country}} <img src={{city.flag}} /> - {{city.main}}</h4>
+              <p>{{city.description}}</p>
+            </div>
+          </div>
+        {{/link-to}}
+      {{/each}}
+    </div>
+</section>

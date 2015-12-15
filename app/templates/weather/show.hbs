@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-2">
+    <h1>{{model.today.temp}}&deg;</h1>
+    <h2>{{model.city.name}}, {{model.city.country}}</h2>
+    <h3>{{model.today.main}}</h3>
+  </div>
+  <div>
+    <ul class="list-inline">
+      <li>
+        <h3>{{model.today.morn}}&deg;</h3>
+        <h4>Morning</h4>
+      </li>
+      <li>
+        <h3>{{model.today.eve}}&deg;</h3>
+        <h4>Evening</h4>
+      </li>
+      <li>
+        <h3>{{model.today.night}}&deg;</h3>
+        <h4>Night</h4>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  {{#each model.forecast as |weather|}}
+    <div class="col-xs-6 col-md-3">
+      <ul class="list-unstyled">
+        <li>{{weather.date}}</li>
+        <li><img src= {{weather.icon}} /> </li>
+        <li>{{weather.day}}</li>
+        <li>{{weather.description}}</li>
+        <li>{{weather.rain}} % of rain</li>
+        <li>{{weather.min}}&deg; min - {{weather.max}}&deg; max</li>
+      </ul>
+    </div>
+  {{/each}}
+</div>
